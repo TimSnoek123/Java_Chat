@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 
-public class UserListPane extends JPanel implements IUserStatusListener {
+public class UserListPane extends JPanel implements IUserStatusListener, IMessageListener {
 
     private final ChatClient client;
     private JList<String> userListUI;
@@ -46,5 +45,12 @@ public class UserListPane extends JPanel implements IUserStatusListener {
     @Override
     public void offline(String userName) {
         userListModel.removeElement(userName);
+    }
+
+    @Override
+    public void onMessage(String fromLogin, String msg) {
+        JOptionPane jOptionPane = new JOptionPane("hello", JOptionPane.INFORMATION_MESSAGE);
+        jOptionPane.createDialog("Message");
+        System.out.println("received Message");
     }
 }
