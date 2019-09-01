@@ -34,7 +34,6 @@ public class UserListPane extends JPanel implements IUserStatusListener, IMessag
                 }
             }
         });
-
     }
 
     @Override
@@ -50,7 +49,7 @@ public class UserListPane extends JPanel implements IUserStatusListener, IMessag
     @Override
     public void onMessage(String fromLogin, String msg) {
         JOptionPane jOptionPane = new JOptionPane("hello", JOptionPane.INFORMATION_MESSAGE);
-        jOptionPane.createDialog("Message");
+        jOptionPane.createDialog("test");
         System.out.println("received Message");
     }
 }

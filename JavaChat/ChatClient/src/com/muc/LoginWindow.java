@@ -2,8 +2,6 @@ package com.muc;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class LoginWindow extends JFrame {
@@ -26,9 +24,7 @@ public class LoginWindow extends JFrame {
         panel.add(passwordField);
         panel.add(loginButton);
 
-        loginButton.addActionListener(e -> {
-            doLogin();
-        });
+        loginButton.addActionListener(e -> doLogin());
 
         getContentPane().add(panel, BorderLayout.CENTER);
 

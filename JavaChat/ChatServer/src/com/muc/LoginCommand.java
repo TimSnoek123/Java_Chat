@@ -35,6 +35,7 @@ public class LoginCommand implements ICommand {
                         if (!login.equals(worker.getLogin())) {
                             String onlineMsg = "online " + worker.getLogin() + "\n";
                             serverWorker.send(onlineMsg);
+                            System.out.println(onlineMsg);
                         }
                     }
                 }
@@ -43,6 +44,7 @@ public class LoginCommand implements ICommand {
                 for (ServerWorker worker : workerList) {
                     String onlineMsg = "online " + login + "\n";
                     worker.send(onlineMsg);
+                    System.out.println(onlineMsg);
                 }
             } else {
                 String msg = "error login\n";

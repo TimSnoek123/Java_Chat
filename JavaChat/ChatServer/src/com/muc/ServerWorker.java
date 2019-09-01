@@ -58,6 +58,7 @@ public class ServerWorker extends Thread {
     }
 
     private void initializeMenu() {
+        //TODO: instead of passing serverWorker to commands pass the parameters
         this.menu = new Menu();
         menu.setCommand("login", new LoginCommand(this));
         menu.setCommand("logoff", new LogoffCommand(this));
@@ -69,7 +70,7 @@ public class ServerWorker extends Thread {
         try {
             handleClientSocket();
         } catch (IOException e) {
-            System.out.println("User closed application");
+            e.printStackTrace();
         }
     }
 
